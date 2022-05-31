@@ -1,5 +1,7 @@
 import React from "react";
-import List from "./components/List";
+import List from "./components/List/List";
+import AddButtonList from "./components/AddButtonList/AddButtonList";
+import DB from "./assets/db.json";
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
         <List
           items={[
             {
+              id: 0,
               icon: (
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -24,19 +27,25 @@ function App() {
         <List
           items={[
             {
+              id: 1,
               color: "blue",
               name: "HomeWork"
             },
             {
+              id: 2,
               color: "pink",
               name: "Pet Project"
             },
             {
+              id: 3,
               color: "green",
               name: "Life"
             }
           ]}
+          // boolean value at the end of attr's
+          isRemovable
         />
+        <AddButtonList colors={DB.colors} />
       </div>
       <div className="todo__tasks"></div>
     </div>
